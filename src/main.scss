@@ -1,0 +1,21 @@
+@import url(./font.scss);
+
+$color-black: #180A0A;
+$color-hotpink: #F10086;
+$color-pink: #F582A7;
+$color-white: #f5f5f5;
+
+body {
+  font-family: 'LeferiPoint-WhiteObliqueA';
+  line-height: 1.4;
+  background-image: url('./hot-pink-pattern.jpg');
+  background-size: 350px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $color-black;
+  font-family: 'bitbit';
+}
