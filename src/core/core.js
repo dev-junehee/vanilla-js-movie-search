@@ -55,7 +55,9 @@ export class Store {
         get: () => state[key],
         set: value => {
           state[key] = value
-          this.observers[key].forEach(observer => observer(value))
+          if (Array.isArray(this.observers[key])) {
+            this.observers[key].forEach(observer => observer(value))
+          }
         }
       })
     }
