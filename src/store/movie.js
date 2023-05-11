@@ -5,7 +5,8 @@ const store = new Store({
   page: 1,
   pageMax: 1,
   movies: [],
-  loading: false
+  loading: false,
+  message: 'SEARCH FOR THE MOVIE TITLE🦄✨'
 })
 
 export default store
@@ -14,13 +15,20 @@ export const searchMovies = async page => {
   store.state.page = page
   if (page === 1) {
     store.state.movies = []
+    store.state.message = ''
   }
   const result = await fetch(`https://www.omdbapi.com/?apikey=7035c60c&s=${store.state.searchText}&page=${page}}`)
-  const { Search, totalResults } = await result.json()
-  store.state.movies = [
-    ...store.state.movies,
-    ...Search
-  ]
-  store.state.pageMax = Math.ceil(Number(totalResults) / 10)
+  const { Search, totalResults, Response, Error } = await result.json()
+  if (Response === 'True') {
+    store.state.movies = [
+      ...store.state.movies,
+      ...Search
+    ]
+    store.state.pageMax = Math.ceil(Number(totalResults) / 10)
+  } else {
+    store.state.message = Error
+  }
+  
+  
   store.state.loading = false
 } 

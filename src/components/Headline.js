@@ -6,6 +6,7 @@ export default class Headline extends Component {
     this.el.innerHTML = /* html */ `
       <h1>
         #영화검색
+        <img src="../video.png" alt="">
       </h1>
       <p>
         The OMDb API is a RESTful web service to obtain movie information,

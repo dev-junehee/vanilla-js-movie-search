@@ -22,6 +22,7 @@ header {
   font-family: 'bitbit';
 }
 
+
 .container {
   max-width: 1400px;
   border: 5px solid red;
@@ -71,10 +72,15 @@ header {
     font-style: italic;
     font-weight: 700;
     margin-bottom: 20px;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
   }
   
   p {
-
+    font-family: 'LeferiPoint-WhiteObliqueA';
   }
 }
 
@@ -82,6 +88,7 @@ header {
   display: flex;
   gap: 10px;
   margin-bottom: 30px;
+
   input {
     flex-grow: 1;
     height: 50px;
@@ -89,10 +96,14 @@ header {
     border-radius: 15px;
     border: none;
     outline: none;
+    font-family: 'LeferiPoint-WhiteObliqueA';
     font-size: 14px;
     color: $color-hotpink;
     background-color: $color-black;
     box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
+  }
+  input::placeholder {
+    color: $color-hotpink;
   }
   .btn {
     flex-grow: 1;
@@ -105,6 +116,16 @@ header {
   padding: 50px 30px 50px;
   border-radius: 15px;
   background-color: $color-black;
+
+  .message {
+    color: $color-hotpink;
+    font-family: 'LeferiPoint-WhiteObliqueA';
+    font-size: 30px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+  }
+
   .movies {
     display: flex;
     flex-wrap: wrap;
