@@ -93,6 +93,26 @@ header {
     transform: scale(1.2);
   }
 }
+@media (max-width: 600px) {
+  header {
+    padding: 14px 20px;
+
+    .container {
+      padding: 0 40px;
+    }
+    .logo {
+      font-size: 30px;
+    }
+    
+    nav {
+      display: none;
+    }
+
+    .user {
+      right: 50px;
+    }
+  }
+}
 
 
 header {
@@ -109,6 +129,16 @@ header {
   margin: 0 auto;
   padding: 100px 0;
 
+}
+@media (max-width: 1200px) {
+  .container {
+    padding: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .container {
+    // padding: 40px 20px;
+  }
 }
 
 .btn {
@@ -187,6 +217,13 @@ header {
   
   p {
     font-family: 'LeferiPoint-WhiteObliqueA';
+  }
+}
+@media (max-width: 600px) {
+  .headline {
+    h1 {
+      font-size: 50px;
+    }
   }
 }
 
@@ -360,6 +397,28 @@ header {
     color: $color-black;
   }
 }
+@media (max-width: 1200px) {
+  .the-movie {
+    margin-top: 60px;
+    gap: 30px;
+
+    .poster {
+      width: 300px;
+      height: calc(300px * 3 / 2);
+    }
+  }
+}
+@media (max-width: 720px) {
+  .the-movie {
+    display: block;
+    margin-top: 78px;
+
+    .title {
+      font-size: 50px;
+      margin-top: 36px;
+    }
+  }
+}
 
 .about {
   // display: flex;
@@ -401,6 +460,14 @@ header {
     background-color: $color-black;
     color: $color-pink;
   }
+}
+
+
+.not-found h1 {
+  font-family:'bitbit';
+  font-size: 100px;
+  color: $color-hotpink;
+  text-align: center;
 }
 
 
