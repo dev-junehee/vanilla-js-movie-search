@@ -1,4 +1,6 @@
 import { Component } from '../core/core'
+import logoImg from '../public/video.png'
+import userImg from '../public/heart.png'
 
 export default class TheHeader extends Component {
   constructor() {
@@ -17,30 +19,47 @@ export default class TheHeader extends Component {
           {
             name: 'About',
             href: '#/about'
-          }
+          } 
         ]
       }
+    })
+    window.addEventListener('popstate', () => {
+      this.render()
     })
   }
   render() {
     this.el.innerHTML = /* html */ `
-      <a href="#/" class="logo">OMDb API</a>
-      <nav>
-        <ul>
-          ${this.state.menus.map(menu => {
-            return /* html */ `
-              <li>
-                <a href="${menu.href}">
-                  ${menu.name}
-                </a>
-              </li>
-            `
-          }).join('')}
-        </ul>
-      </nav>
-      <a href="#/about" class="user">
-        <img src="../video.png" alt="User">
-      </a>
+      <div class="container">
+        <a 
+          href="#/"
+          class="logo">
+          <img src=${logoImg} alt="Logo">
+          <div>
+            OMDb API
+          </div>
+        </a>
+        <nav>
+          <ul>
+            ${this.state.menus.map(menu => {
+              const href = menu.href.split('?')[0]
+              const hash = location.hash.split('?')[0]
+              const isActive = href === hash
+              return /* html */ `
+                <li>
+                  <a class="${isActive ? 'active' : ''}"
+                      href="${menu.href}">
+                      ${menu.name}
+                  </a>
+                </li>
+              `
+            }).join('')}
+          </ul>
+        </nav>
+        <a href="#/about" class="user">
+          <img src=${userImg} alt="User">
+        </a>
+      </div>
+      
     `
   }
 }
