@@ -361,6 +361,49 @@ header {
   }
 }
 
+.about {
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: center;
+  // align-items: center;
+
+  .photo {
+    width: 380px;
+    margin: 0 auto 20px;
+    background-size: cover;
+
+    img {
+      width: 100%;
+      border-radius: 15px;
+    }
+  }
+
+  .name {
+    font-size: 40px;
+  }
+
+  .bio {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  p {
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 4px;
+  }
+
+  a {
+    text-decoration: none;
+    color: $color-hotpink;
+  }
+  a:hover {
+    background-color: $color-black;
+    color: $color-pink;
+  }
+}
+
+
 footer {
   display: flex;
   justify-content: center;
@@ -374,4 +417,12 @@ footer {
   text-align: center;
   color: $color-hotpink;
   background-color: $color-black;
+
+  a {
+    color: $color-hotpink;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $color-pink;
+  }
 }

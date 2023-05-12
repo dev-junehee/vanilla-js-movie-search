@@ -2,8 +2,6 @@
   "name": "vanilla-js-movie-search",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "parcel ./index.html",
     "build": "parcel build ./index.html"

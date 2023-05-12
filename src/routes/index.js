@@ -6,5 +6,5 @@ import About from "./About"
 export default createRouter([
   { path: '#/', component: Home },
   { path: '#/movie', component: Movie },
-  { path: '#/About', component: About }
+  { path: '#/about', component: About }
 ])

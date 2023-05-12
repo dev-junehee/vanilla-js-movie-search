@@ -1,4 +1,5 @@
-import { Component } from "../core/core";
+import { Component } from "../core/core"
+import aboutStore from "../store/about"
 
 export default class TheFooter extends Component {
   constructor() {
@@ -7,11 +8,12 @@ export default class TheFooter extends Component {
     })
   }
   render() {
+    const { github } = aboutStore.state
     this.el.innerHTML = /* html */ `
       <div>
         <div>
           copyright ©<span> ${new Date().getFullYear()} </span>
-          KIMJUNEHEE. All Rights Rreserved
+          <a href="${github}">KIMJUNEHEE</a>. All Rights Rreserved.
         </div>
       </div>
     `
