@@ -35,6 +35,7 @@ export const searchMovies = async page => {
       store.state.pageMax = Math.ceil(Number(totalResults) / 10)
     } else {
       store.state.message = Error
+      store.state.pageMax = 1
     }
   } catch (error) {
     console.log('searchMovies error: ', error)
@@ -46,8 +47,8 @@ export const searchMovies = async page => {
 export const getMovieDetails = async id => {
   try {
     const res = await fetch('/api/movie', {
+      method: 'POST',
       body: JSON.stringify({
-        method: 'POST',
         id
       })
     })
